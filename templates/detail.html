@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}Book details:{% endblock %}
+
+{% block header %}<h1>Book details:</h1>{% endblock %}
+
+{% block content %}
+    {% if obj %}
+        <form method="post">
+            <label for="title">Title:</label>
+            <input name="title" id="title" value={{ obj.title }} required>
+            <label for="author">Author:</label>
+            <input name="author" id="author" value={{ obj.author }} required>
+            <label for="published">Year published:</label>
+            <input name="published" id="published" value={{ obj.published }} required>
+            <label for="pages">Pages:</label>
+            <input name="pages" id="pages" value={{ obj.pages }} required>
+            <input type="submit" value="Update">
+        </form>
+    {% endif %}
+{% endblock %}

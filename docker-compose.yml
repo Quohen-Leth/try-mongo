@@ -1,0 +1,11 @@
+version: "3"
+services:
+  database:
+    image: mongo
+    container_name: mongo-container
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=mongouser
+      - MONGO_INITDB_ROOT_PASSWORD=password
+    restart: on-failure
+    ports:
+      - 27017:27017

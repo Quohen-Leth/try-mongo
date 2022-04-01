@@ -1,0 +1,19 @@
+<!doctype html>
+
+<title>{% block title %}{% endblock %}</title>
+
+<nav>
+    <h1>Navigation</h1>
+    <ul>
+        <li><a href="{{ url_for('.add_book') }}">Add Book</a>
+        <li><a href="{{ url_for('.view_books') }}">View Books</a>
+    </ul>
+</nav>
+
+<section class="content">
+    <header>
+      {% block header %}{% endblock %}
+    </header>
+    {% block content %}
+    {% endblock %}
+  </section>

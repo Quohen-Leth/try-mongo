@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}Add Book{% endblock %}
+
+{% block header %}<h1>Add Book</h1>{% endblock %}
+
+{% block content %}
+    <form method="post">
+        <label for="title">Title</label>
+        <input name="title" id="title" required>
+        <label for="author">Author</label>
+        <input name="author" id="author" required>
+        <label for="published">Year published</label>
+        <input name="published" id="published" required>
+        <label for="pages">Pages:</label>
+        <input name="pages" id="pages" required>
+        <input type="submit" value="Add Book">
+    </form>
+    {% if obj %}
+        <h2>Book added</h2>
+        <p>Id: {{ obj.inserted_id }}</p>
+    {% endif %}
+{% endblock %}

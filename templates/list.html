@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}My Books:{% endblock %}
+
+{% block header %}<h1>My Books:</h1>{% endblock %}
+
+{% block content %}
+    <form method="post">
+        <input name="search" id="search" required>
+        <input type="submit" value="Search">
+    </form>
+    {% if objects %}
+        <ol>
+            {% for obj in objects %}
+                <li><a href="{{ url_for('.book_details', id=obj._id) }}">
+                    Title: {{ obj.title }}, Author: {{ obj.author }}, Year Published: {{ obj.published }}, Pages: {{ obj.pages }}
+                </a>
+            {% endfor %}
+        </ol>
+    {% endif %}
+{% endblock %}
